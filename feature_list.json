@@ -1,0 +1,47 @@
+{
+  "features": [
+    {
+      "id": "comparador-price-comparison",
+      "name": "Comparador price comparison app",
+      "status": "done",
+      "summary": "Create a new app folder for an Argentina-focused price comparison tool where the user enters an article and the app searches online sources to compare prices.",
+      "requested_path": "comparador/",
+      "notes": [
+        "User is in Argentina; local currency, marketplaces, and stores matter.",
+        "User clarified the app should be created as a local folder inside the current project, named comparador/.",
+        "Harvest review passed on 2026-05-14; no irresponsible scraping or fake real-source data found."
+      ]
+    },
+    {
+      "id": "comparador-mercadolibre-source",
+      "name": "Comparador Mercado Libre source integration",
+      "status": "spec_ready",
+      "summary": "Add a real Mercado Libre Argentina source adapter to the existing comparador app using permitted API access instead of scraping.",
+      "requested_path": "comparador/",
+      "notes": [
+        "User asked for the app to work with Mercado Libre.",
+        "Mercado Libre docs list /sites/$SITE_ID/search for item search; examples use Authorization: Bearer $ACCESS_TOKEN.",
+        "A direct unauthenticated check from this environment returned HTTP 403, so requirements/design must handle token/configuration errors explicitly.",
+        "User agreed with the MELI_ACCESS_TOKEN environment-variable approach and paused implementation until the next session."
+      ]
+    }
+  ],
+  "statuses": [
+    "seed",
+    "exploring",
+    "rooting",
+    "shaping",
+    "pruning",
+    "spec_ready",
+    "growing",
+    "ripening",
+    "harvest_ready",
+    "done",
+    "archived"
+  ],
+  "rules": {
+    "only_one_active_feature": true,
+    "human_approval_required_before_growing": true,
+    "ripening_required_before_harvest": true
+  }
+}
