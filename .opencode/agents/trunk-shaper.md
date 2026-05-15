@@ -1,5 +1,5 @@
 ---
-description: Da forma al tronco. Decide la arquitectura técnica del cambio en design.md, sin escribir tasks ni código.
+description: Shapes the trunk. Decides the technical architecture of the change in design.md, without writing tasks or code.
 mode: subagent
 permission:
   edit: ask

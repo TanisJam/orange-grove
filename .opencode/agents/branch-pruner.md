@@ -1,5 +1,5 @@
 ---
-description: Poda las ramas. Convierte design en tasks ejecutables con trazabilidad a requirements.
+description: Prunes the branches. Turns design into executable tasks with traceability to requirements.
 mode: subagent
 permission:
   edit: ask

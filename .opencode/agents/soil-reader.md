@@ -1,5 +1,5 @@
 ---
-description: Lee la tierra antes de plantar. Explora el repo y produce explore.md con contexto, restricciones y open questions.
+description: Reads the soil before planting. Explores the repo and produces explore.md with context, constraints, and open questions.
 mode: subagent
 permission:
   edit: ask

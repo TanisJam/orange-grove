@@ -1,5 +1,5 @@
 ---
-description: Orquesta el flujo Orange Grove. Cuida el naranjal completo y no implementa código directamente.
+description: Orchestrates the Orange Grove flow. Tends the whole grove and does not implement code directly.
 mode: primary
 permission:
   edit: ask

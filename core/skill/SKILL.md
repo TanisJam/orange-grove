@@ -10,7 +10,7 @@ description: >
 license: Apache-2.0
 metadata:
   author: gentleman-programming
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # Orange Grove
@@ -21,7 +21,7 @@ Use this skill when the user wants to define, plan, implement, verify, or review
 
 ## Core Principle
 
-No se cosecha fruta sin raíces: **no implementation before approved specs**. And no harvest before ripeness: **no human review before mechanical verification passes**.
+**Don't harvest before you plant.** No implementation before approved specs, and no human review before mechanical verification passes.
 
 ## Citrus Workflow (8 phases)
 

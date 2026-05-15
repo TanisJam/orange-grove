@@ -1,5 +1,5 @@
 ---
-description: Hace crecer las roots de Orange Grove: requirements claros antes de diseñar o codear.
+description: Grows the roots of Orange Grove: clear requirements before any design or code.
 mode: subagent
 permission:
   edit: ask

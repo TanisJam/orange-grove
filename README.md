@@ -1,6 +1,6 @@
 # Orange Grove
 
-A personal, portable Spec Driven Development harness with a citrus metaphor and a hard rule: **no se cosecha fruta sin raíces** — no implementation before approved specs, no harvest before mechanical verification.
+A personal, portable Spec Driven Development harness with a citrus metaphor and a hard rule: **don't harvest before you plant** — no implementation before approved specs, no harvest before mechanical verification.
 
 > Tools change. Processes are fundamental. Orange Grove makes the process portable.
 

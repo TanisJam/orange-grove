@@ -2,6 +2,15 @@
 
 All notable changes to Orange Grove follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) conventions.
 
+## [0.3.1] — 2026-05-15
+
+### Changed
+- Hard rule reworded from "no se cosecha fruta sin raíces" to **"don't harvest before you plant"** — punchier and language-portable.
+- All harness files translated to English for efficiency and to share publicly. The `orange-grove` agent's language-matching instruction is preserved so it can still speak Rioplatense Spanish when the user does.
+- `core/manifest.json` agent descriptions rewritten in English.
+- `core/docs/AGENTS.md.tpl`, `core/docs/orange-grove.md`, `core/state/current.md` rewritten in English.
+- Version bumped to 0.3.1 in `core/manifest.json` and `core/skill/SKILL.md`.
+
 ## [0.3.0] — 2026-05-15
 
 ### Added

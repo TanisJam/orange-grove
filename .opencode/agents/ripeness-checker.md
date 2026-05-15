@@ -1,5 +1,5 @@
 ---
-description: Chequea si la fruta está madura. Verificación mecánica contra spec, sin editar código.
+description: Checks if the fruit is ripe. Mechanical verification against spec, without editing code.
 mode: subagent
 permission:
   edit: deny

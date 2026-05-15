@@ -1,5 +1,5 @@
 ---
-description: Cosecha humana. Revisa calidad de código y aprueba el cierre. No edita código.
+description: Human harvest. Reviews code quality and approves closure. Does not edit code.
 mode: subagent
 permission:
   edit: deny

@@ -1,70 +1,72 @@
 # Orange Grove
 
-Este repo usa el harness **Orange Grove** — Spec Driven Development con metáfora cítrica.
+This project uses the **Orange Grove** harness — Spec Driven Development with a citrus metaphor.
 
-La idea central: no se cosecha fruta sin raíces, y no se cosecha fruta sin madurar. Antes de implementar, exploramos, hacemos crecer requirements, diseñamos el tronco y podamos tasks. Antes de aprobar como humano, verificamos mecánicamente.
+Core idea: **don't harvest before you plant**. Before implementing, we explore, grow requirements, shape the trunk, and prune tasks. Before approving as humans, we verify mechanically.
 
-## Agentes locales
+## Local agents
 
-| Agente | Rol |
+| Agent | Role |
 | --- | --- |
-| `orange-grove` | Orquestador / leader. Cuida el naranjal completo y no implementa código directamente. |
-| `soil-reader` | Explora el repo y produce `explore.md` antes de cualquier spec. |
-| `root-gardener` | Requirements / spec author. Hace crecer las raíces antes de cualquier código. |
-| `trunk-shaper` | Diseño técnico. Da forma al tronco. |
-| `branch-pruner` | Task planner. Poda las ramas ejecutables. |
-| `fruit-grower` | Implementer. Hace crecer la fruta siguiendo tasks aprobadas, una por vez. |
-| `ripeness-checker` | Verificación mecánica contra spec. No edita código. |
-| `harvest-inspector` | Review humano + archive. No edita código. |
+| `orange-grove` | Orchestrator / leader. Tends the whole grove. Does not implement code directly. |
+| `soil-reader` | Explores the repo and produces `explore.md` before any spec. |
+| `root-gardener` | Requirements / spec author. Grows the roots before any code. |
+| `trunk-shaper` | Technical design. Shapes the trunk. |
+| `branch-pruner` | Task planner. Prunes the executable branches. |
+| `fruit-grower` | Implementer. Grows the fruit by following approved tasks one at a time. |
+| `ripeness-checker` | Mechanical verification against spec. Does not edit code. |
+| `harvest-inspector` | Human review + archive. Does not edit code. |
 
 ## Validators
 
-Pure-Node scripts en `validator/` que enforzan reglas mecánicas:
+Pure-Node scripts in `validator/` that enforce mechanical rules:
 
-- `validator/check-traceability.mjs` — cada `Rn` cubierto por ≥1 task; sin refs huérfanas.
-- `validator/check-spec-shape.mjs` — secciones requeridas por template.
-- `validator/doctor.mjs` — health del harness (state.yaml ↔ feature_list ↔ folders ↔ agents).
+- `validator/check-traceability.mjs` — every `Rn` covered by ≥1 task; no orphan refs.
+- `validator/check-spec-shape.mjs` — required template sections per spec file.
+- `validator/check-delta.mjs` — delta well-formedness for changes.
+- `validator/apply-delta.mjs` — merged previews of base + change.
+- `validator/doctor.mjs` — harness health (state.yaml ↔ feature_list ↔ folders ↔ agents).
 
-`ripeness-checker` los corre como parte del veredicto. `orange-grove` corre `doctor` al inicio de sesión.
+`ripeness-checker` runs these as part of its verdict. `orange-grove` runs `doctor` at session start.
 
-## Skill local
+## Local skill
 
-- `orange-grove`: contiene el proceso reutilizable, la metáfora cítrica y las reglas SDD.
+- `orange-grove`: holds the reusable process, the citrus metaphor, and the SDD rules.
 
-## Flujo
+## Flow
 
-1. **Plant the Seed** — capturar la intención en `feature_list.json`.
-2. **Read the Soil** — `soil-reader` escribe `specs/<feature>/explore.md`.
-3. **Grow the Roots** — `root-gardener` escribe `specs/<feature>/requirements.md`.
-4. **Shape the Trunk** — `trunk-shaper` escribe `specs/<feature>/design.md`.
-5. **Prune the Branches** — `branch-pruner` escribe `specs/<feature>/tasks.md`.
-6. **Grow the Fruit** — `fruit-grower` implementa siguiendo tasks aprobadas.
-7. **Check Ripeness** — `ripeness-checker` valida mecánicamente (Rn → Tn → evidencia).
-8. **Harvest** — `harvest-inspector` revisa calidad y archiva.
+1. **Plant the Seed** — capture the intent in `feature_list.json`.
+2. **Read the Soil** — `soil-reader` writes `specs/active/<feature>/explore.md`.
+3. **Grow the Roots** — `root-gardener` writes `specs/active/<feature>/requirements.md`.
+4. **Shape the Trunk** — `trunk-shaper` writes `specs/active/<feature>/design.md`.
+5. **Prune the Branches** — `branch-pruner` writes `specs/active/<feature>/tasks.md`.
+6. **Grow the Fruit** — `fruit-grower` implements following the approved tasks.
+7. **Check Ripeness** — `ripeness-checker` validates mechanically (Rn → Tn → evidence).
+8. **Harvest** — `harvest-inspector` reviews quality and archives.
 
-## Estado en disco
+## State on disk
 
-| Archivo | Uso |
+| File | Purpose |
 | --- | --- |
-| `feature_list.json` | Lista de features y estado actual. |
-| `progress/state.yaml` | Estado parseable (canónico para máquina). |
-| `specs/active/<feature>/explore.md` | Soil notes (contexto del repo). |
+| `feature_list.json` | Feature registry and current status. |
+| `progress/state.yaml` | Parseable state (canonical for machine reads). |
+| `specs/active/<feature>/explore.md` | Soil notes (repo context). |
 | `specs/active/<feature>/requirements.md` | Roots. |
 | `specs/active/<feature>/design.md` | Trunk. |
 | `specs/active/<feature>/tasks.md` | Branches. |
-| `specs/archive/<feature>/` | Features cerradas y archivadas. |
-| `templates/` | Shapes canónicos de cada artefacto. |
-| `progress/current.md` | Estado vivo de la sesión (prosa humana). |
-| `progress/impl_<feature>.md` | Notas del implementer. |
-| `progress/verify_<feature>.md` | Resultado de Ripening. |
-| `progress/harvest_<feature>.md` | Resultado de Harvest. |
-| `progress/history.md` | Bitácora append-only. |
-| `CHECKPOINTS.md` | Criterios para considerar una feature lista. |
+| `specs/archive/<feature>/` | Closed and archived features. |
+| `templates/` | Canonical shapes for each artifact. |
+| `progress/current.md` | Live session state (human prose). |
+| `progress/impl_<feature>.md` | Implementer notes. |
+| `progress/verify_<feature>.md` | Ripening result. |
+| `progress/harvest_<feature>.md` | Harvest result. |
+| `progress/history.md` | Append-only audit log. |
+| `CHECKPOINTS.md` | Criteria for considering a feature done. |
 
-## Reglas duras
+## Hard rules
 
-- El líder coordina, no implementa.
-- Soil antes de Roots. Roots antes de Trunk. Trunk antes de Branches. Branches antes de Fruit.
-- Fruit antes de Ripening. Ripening antes de Harvest.
-- Sin Ripening verde no hay review humano.
-- CONCEPTOS ANTES DE CÓDIGO.
+- The leader coordinates, does not implement.
+- Soil before Roots. Roots before Trunk. Trunk before Branches. Branches before Fruit.
+- Fruit before Ripening. Ripening before Harvest.
+- No human review without a green Ripening.
+- **CONCEPTS BEFORE CODE.**

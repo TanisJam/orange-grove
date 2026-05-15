@@ -1,42 +1,43 @@
 # Orange Grove
 
-Orange Grove es una adaptación personal de Spec Driven Development para trabajar con agentes reutilizables.
+Orange Grove is a personal adaptation of Spec Driven Development for working with reusable agents.
 
-## Metáfora
+## Metaphor
 
-| SDD | Orange Grove | Resultado |
+| SDD | Orange Grove | Outcome |
 | --- | --- | --- |
-| Idea | Seed | Cambio identificado |
-| Exploración | Soil | Contexto del repo entendido y documentado |
-| Requirements | Roots | Qué debe pasar |
-| Design | Trunk | Cómo se sostiene técnicamente |
-| Tasks | Branches | Pasos ejecutables |
-| Implementation | Fruit | Código |
-| Verification | Ripening | ¿Está madura la fruta? (mecánico) |
-| Review | Harvest | Cosecha humana y archivado |
+| Idea | Seed | Change identified |
+| Exploration | Soil | Repo context understood and documented |
+| Requirements | Roots | What must happen |
+| Design | Trunk | How it stands up technically |
+| Tasks | Branches | Executable steps |
+| Implementation | Fruit | Code |
+| Verification | Ripening | Is the fruit ripe? (mechanical) |
+| Review | Harvest | Human-style review and archive |
 
-## Agentes
+## Agents
 
-| Agente | Rol |
+| Agent | Role |
 | --- | --- |
-| `orange-grove` | Orquestador / leader |
-| `soil-reader` | Exploración del repo |
+| `orange-grove` | Orchestrator / leader |
+| `soil-reader` | Repo exploration |
 | `root-gardener` | Requirements / spec author |
-| `trunk-shaper` | Diseño técnico |
+| `trunk-shaper` | Technical design |
 | `branch-pruner` | Task planner |
 | `fruit-grower` | Implementer |
-| `ripeness-checker` | Verificación mecánica |
-| `harvest-inspector` | Review humano + archive |
+| `ripeness-checker` | Mechanical verification |
+| `harvest-inspector` | Human review + archive |
 
-## Reglas principales
+## Main rules
 
-- No se implementa fruta sin raíces aprobadas.
-- No se cosecha fruta sin madurar (Ripening verde antes que Harvest).
-- Ripeness y Harvest no editan código.
+- Don't harvest before you plant.
+- No implementation without approved roots.
+- No harvest without a green Ripening.
+- Ripening and Harvest do not edit code.
 
-## Archivos por feature
+## Files per feature
 
-Cada feature activa vive en:
+Each active feature lives in:
 
 ```txt
 specs/active/<feature>/
@@ -46,32 +47,32 @@ specs/active/<feature>/
 └── tasks.md
 ```
 
-Con progreso y verificación en:
+Progress and verification artifacts:
 
 ```txt
 progress/
-├── state.yaml              ← canónico
-├── current.md              ← prosa humana
+├── state.yaml              ← canonical machine-readable state
+├── current.md              ← human prose
 ├── history.md
 ├── impl_<feature>.md
 ├── verify_<feature>.md
 └── harvest_<feature>.md
 ```
 
-Features cerradas se mueven a `specs/archive/<feature>/`.
+Closed features move to `specs/archive/<feature>/`.
 
-Templates canónicos en `templates/` (uno por artefacto).
+Canonical templates live in `templates/` (one per artifact).
 
-## Estados
+## States
 
-- `seed`: idea registrada.
-- `exploring`: soil-reader trabajando.
-- `rooting`: requirements en preparación.
-- `shaping`: design en preparación.
-- `pruning`: tasks en preparación.
-- `spec_ready`: explore + requirements + design + tasks listos, esperando aprobación humana.
-- `growing`: implementación en curso.
-- `ripening`: verificación mecánica en curso.
-- `harvest_ready`: ripeness PASS, listo para review humano.
-- `done`: harvest PASS, listo para archivar.
-- `archived`: movido a `specs/archive/<feature>/`.
+- `seed` — intent registered.
+- `exploring` — soil-reader is producing `explore.md`.
+- `rooting` — requirements being written.
+- `shaping` — design being written.
+- `pruning` — tasks being written.
+- `spec_ready` — explore + requirements + design + tasks done, waiting for human approval.
+- `growing` — implementation in progress.
+- `ripening` — mechanical verification in progress.
+- `harvest_ready` — Ripening passed, ready for human review.
+- `done` — Harvest passed, ready to archive.
+- `archived` — moved to `specs/archive/<feature>/`.

@@ -1,5 +1,5 @@
 ---
-description: Hace crecer la fruit: implementa tasks aprobadas de Orange Grove, una por vez.
+description: Grows the fruit: implements approved Orange Grove tasks one at a time.
 mode: subagent
 permission:
   edit: ask

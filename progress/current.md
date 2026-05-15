@@ -4,28 +4,29 @@
 
 ## Active feature
 
-None. Naranjal limpio, esperando la próxima Seed.
+None. Grove is clean, waiting for the next Seed.
 
 ## Harness status
 
-- Fase A (metáfora + roster): completa.
-- Fase B (artefactos parseables): completa.
-- Fase C (validators): completa.
-- Fase D (portabilidad / core + adapters): completa.
-- Fase E (delta specs + remote install): completa.
-- Fase F (polish: onboarding, ejemplo, positioning, tests): completa.
+- Phase A (metaphor + roster): complete.
+- Phase B (parseable artifacts): complete.
+- Phase C (validators): complete.
+- Phase D (portability / core + adapters): complete.
+- Phase E (delta specs + remote install): complete.
+- Phase F (polish: onboarding, example, positioning, tests): complete.
+- Phase G (English translation + hard rule rewording): complete.
 
-**Orange Grove v0.3.0 is ready to push to GitHub.**
+**Orange Grove v0.3.1 is published.**
 
 ## How to plant the next seed
 
-1. Capturá la intención en `feature_list.json` con `status: seed`.
-2. Reflejala en `progress/state.yaml` (`active_feature` + entrada en `features`).
-3. `orange-grove` delega a `soil-reader` para arrancar Soil.
+1. Capture the intent in `feature_list.json` with `status: seed`.
+2. Mirror it in `progress/state.yaml` (`active_feature` + entry in `features`).
+3. `orange-grove` delegates to `soil-reader` to start Soil.
 
 ## How to plant a change
 
-1. Identificá la feature base (debe existir y estar `done` o `growing`).
-2. Agregá en `feature_list.json` una entrada con `kind: "change"`, `targets: "<base-feature-id>"`, e `id: "<base>/<change-id>"`.
-3. Reflejala en `state.yaml`.
-4. El flujo es idéntico al de feature; los specs viven en `specs/active/<base>/changes/<change-id>/`.
+1. Identify the base feature (must exist and be `done` or `growing`).
+2. Add an entry to `feature_list.json` with `kind: "change"`, `targets: "<base-feature-id>"`, and `id: "<base>/<change-id>"`.
+3. Mirror it in `state.yaml`.
+4. The flow is identical to a feature; specs live in `specs/active/<base>/changes/<change-id>/`.

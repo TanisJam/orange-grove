@@ -68,7 +68,13 @@ Append-only session history.
 - README updated with three install paths (curl, local clone, in-repo).
 - Lesson: `--force` overwrites state files. Default install preserves them; only use `--force` for explicit resets.
 
-## 2026-05-15 — Fase F polish (Orange Grove v0.3.0)
+## 2026-05-15 — Phase G — English translation and rule rewording (v0.3.1)
+
+- All harness files translated to English for efficiency and to share publicly.
+- Hard rule reworded from "no se cosecha fruta sin raíces" to **"don't harvest before you plant"** — punchier and language-portable.
+- The `orange-grove` agent retains its language-matching instruction so it still uses Rioplatense Spanish with the user when the conversation is in Spanish.
+
+## 2026-05-15 — Phase F polish (Orange Grove v0.3.0)
 
 - Decided product name: **Orange Grove** (technical identifier `orange-sdd` retained for the skill name).
 - Added `docs/onboarding.md` (first 30 minutes walkthrough).
