@@ -10,7 +10,7 @@ description: >
 license: Apache-2.0
 metadata:
   author: gentleman-programming
-  version: "0.3.1"
+  version: "0.3.2"
 ---
 
 # Orange Grove
@@ -88,10 +88,10 @@ Both register in `feature_list.json`:
 
 ```json
 // Feature
-{ "id": "comparador", "kind": "feature", "status": "done" }
+{ "id": "auth", "kind": "feature", "status": "done" }
 
 // Change targeting the feature
-{ "id": "comparador/add-mercadolibre", "kind": "change", "targets": "comparador", "status": "seed" }
+{ "id": "auth/add-mfa", "kind": "change", "targets": "auth", "status": "seed" }
 ```
 
 `kind` defaults to `"feature"` if omitted (backward compatible).

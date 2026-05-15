@@ -2,6 +2,12 @@
 
 All notable changes to Orange Grove follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) conventions.
 
+## [0.3.2] — 2026-05-15
+
+### Changed
+- Replaced development scaffolding examples in docs with neutral identifiers (`auth`, `add-mfa`) consistent with the test fixtures.
+- Cleaned up `progress/history.md` to focus on harness phases.
+
 ## [0.3.1] — 2026-05-15
 
 ### Changed
@@ -71,4 +77,3 @@ All notable changes to Orange Grove follow [Keep a Changelog](https://keepachang
 - 5 agents: `orange-grove`, `root-gardener`, `branch-planner`, `fruit-grower`, `harvest-inspector`.
 - Disk-first state: `feature_list.json`, `progress/current.md`, `progress/history.md`, `specs/<feature>/`.
 - 6 feature states: `seed`, `rooting`, `spec_ready`, `growing`, `harvest_ready`, `done`.
-- First worked feature: `comparador-price-comparison` (Argentina price-comparison MVP).

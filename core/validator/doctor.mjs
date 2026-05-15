@@ -86,7 +86,7 @@ if (!existsSync(STATE)) {
   else stateActive = activeMatch[1] === 'null' ? null : activeMatch[1].replace(/^["']|["']$/g, '');
 
   // Extract feature ids under `features:` map.
-  // Match lines like `  comparador-foo:` (2-space indent, ending in colon, no value).
+  // Match lines like `  feature-name:` (2-space indent, ending in colon, no value).
   const featuresBlock = stateRaw.match(/^features:\s*(\{\}|$)([\s\S]*?)(?=^\w)/m);
   if (featuresBlock && featuresBlock[1] !== '{}') {
     const block = featuresBlock[2];

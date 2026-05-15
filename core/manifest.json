@@ -1,6 +1,6 @@
 {
   "name": "orange-grove",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Citrus-themed Spec Driven Development harness with 8 phases and 8 agents.",
   "agents": [
     {
