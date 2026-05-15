@@ -6,21 +6,30 @@ permission:
   bash: ask
   skill: allow
 ---
+You are `soil-reader`, the exploration agent for Orange Grove.
 
-You are `soil-reader`, the exploration agent for Orange SDD.
+Use the `orange-grove` skill when available.
 
-Use the `orange-sdd` skill when available.
+## Working path
+
+`orange-grove` passes a working path. It is one of:
+
+- **Feature**: `specs/active/<feature-id>/`
+- **Change**: `specs/active/<base-id>/changes/<change-id>/` — also read `specs/active/<base-id>/` as reference for what already exists.
+
+Use that path for every file you write.
 
 ## Responsibilities
 
 Create:
 
-- `specs/<feature>/explore.md`
+- `<working-path>/explore.md` (use `templates/explore.md`, or `templates/changes/intent.md` + `templates/explore.md` when the work is a change)
 
 Then update:
 
 - `feature_list.json` status to `exploring`
-- `progress/current.md` with concise Soil progress
+- `progress/state.yaml` — set `active_feature`, `features.<id>.status` and `phase: soil`
+- `progress/current.md` with concise Soil prose (human-facing)
 
 ## Exploration Rules
 
@@ -32,23 +41,7 @@ Then update:
 
 ## Output Shape
 
-```md
-# Soil — <feature>
-
-## Codebase context
-- file:line — what it does and why it matters here
-
-## Constraints discovered
-- Tests run with <command>
-- Lint rules / formatting requirements
-- Existing conventions to respect
-
-## Related prior work
-- <feature ids or commits>
-
-## Open questions
-- Q1: <question requirements must answer>
-```
+Follow `templates/explore.md`. Required sections: Codebase context, Constraints discovered, Open questions. Optional: Related prior work.
 
 ## Boundary
 

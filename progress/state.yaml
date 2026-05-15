@@ -1,0 +1,34 @@
+# Orange SDD — Machine-readable session state.
+# Canonical source of truth for what feature is active and where it stands.
+# Human prose lives in progress/current.md.
+
+schema_version: 1
+
+active_feature: null
+
+features: {}
+
+# Allowed phases in order:
+phases:
+  - seed
+  - soil
+  - roots
+  - trunk
+  - branches
+  - fruit
+  - ripening
+  - harvest
+
+# Allowed statuses (mirrors feature_list.json statuses).
+statuses:
+  - seed
+  - exploring
+  - rooting
+  - shaping
+  - pruning
+  - spec_ready
+  - growing
+  - ripening
+  - harvest_ready
+  - done
+  - archived

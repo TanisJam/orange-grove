@@ -1,0 +1,82 @@
+{
+  "tool": "opencode",
+  "displayName": "opencode",
+  "agentDir": ".opencode/agents",
+  "agentExtension": ".md",
+  "skillDir": ".opencode/skills/orange-grove",
+  "agents": {
+    "orange-grove": {
+      "mode": "primary",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask",
+        "task": "allow",
+        "todowrite": "allow",
+        "skill": "allow"
+      }
+    },
+    "soil-reader": {
+      "mode": "subagent",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask",
+        "skill": "allow"
+      }
+    },
+    "root-gardener": {
+      "mode": "subagent",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask",
+        "skill": "allow"
+      }
+    },
+    "trunk-shaper": {
+      "mode": "subagent",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask",
+        "skill": "allow"
+      }
+    },
+    "branch-pruner": {
+      "mode": "subagent",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask",
+        "skill": "allow"
+      }
+    },
+    "fruit-grower": {
+      "mode": "subagent",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask",
+        "skill": "allow"
+      }
+    },
+    "ripeness-checker": {
+      "mode": "subagent",
+      "permission": {
+        "edit": "deny",
+        "bash": "ask",
+        "skill": "allow"
+      }
+    },
+    "harvest-inspector": {
+      "mode": "subagent",
+      "permission": {
+        "edit": "deny",
+        "bash": "ask",
+        "skill": "allow"
+      }
+    }
+  },
+  "extraFiles": [
+    {
+      "source": "adapters/opencode/opencode.json.tpl",
+      "target": "opencode.json",
+      "overwrite": "never"
+    }
+  ]
+}

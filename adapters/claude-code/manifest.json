@@ -1,0 +1,41 @@
+{
+  "tool": "claude-code",
+  "displayName": "Claude Code",
+  "agentDir": ".claude/agents",
+  "agentExtension": ".md",
+  "skillDir": ".claude/skills/orange-grove",
+  "agents": {
+    "orange-grove": {
+      "model": "opus",
+      "tools": ["Read", "Write", "Edit", "Bash", "Agent", "TaskCreate", "TaskUpdate", "TaskList"]
+    },
+    "soil-reader": {
+      "model": "sonnet",
+      "tools": ["Read", "Write", "Bash", "Glob", "Grep"]
+    },
+    "root-gardener": {
+      "model": "sonnet",
+      "tools": ["Read", "Write", "Edit"]
+    },
+    "trunk-shaper": {
+      "model": "opus",
+      "tools": ["Read", "Write", "Edit"]
+    },
+    "branch-pruner": {
+      "model": "sonnet",
+      "tools": ["Read", "Write", "Edit"]
+    },
+    "fruit-grower": {
+      "model": "sonnet",
+      "tools": ["Read", "Write", "Edit", "Bash", "Glob", "Grep"]
+    },
+    "ripeness-checker": {
+      "model": "sonnet",
+      "tools": ["Read", "Bash", "Glob", "Grep"]
+    },
+    "harvest-inspector": {
+      "model": "sonnet",
+      "tools": ["Read", "Bash", "Glob", "Grep"]
+    }
+  }
+}

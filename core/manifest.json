@@ -1,0 +1,84 @@
+{
+  "name": "orange-grove",
+  "version": "0.3.0",
+  "description": "Citrus-themed Spec Driven Development harness with 8 phases and 8 agents.",
+  "agents": [
+    {
+      "name": "orange-grove",
+      "phase": "all",
+      "role": "primary",
+      "description": "Orquesta el flujo Orange Grove. Cuida el naranjal completo y no implementa código directamente."
+    },
+    {
+      "name": "soil-reader",
+      "phase": "soil",
+      "role": "subagent",
+      "description": "Lee la tierra antes de plantar. Explora el repo y produce explore.md con contexto, restricciones y open questions."
+    },
+    {
+      "name": "root-gardener",
+      "phase": "roots",
+      "role": "subagent",
+      "description": "Hace crecer las roots de Orange Grove: requirements claros antes de diseñar o codear."
+    },
+    {
+      "name": "trunk-shaper",
+      "phase": "trunk",
+      "role": "subagent",
+      "description": "Da forma al tronco. Decide la arquitectura técnica del cambio en design.md, sin escribir tasks ni código."
+    },
+    {
+      "name": "branch-pruner",
+      "phase": "branches",
+      "role": "subagent",
+      "description": "Poda las ramas. Convierte design en tasks ejecutables con trazabilidad a requirements."
+    },
+    {
+      "name": "fruit-grower",
+      "phase": "fruit",
+      "role": "subagent",
+      "description": "Hace crecer la fruit: implementa tasks aprobadas de Orange Grove, una por vez."
+    },
+    {
+      "name": "ripeness-checker",
+      "phase": "ripening",
+      "role": "subagent-readonly",
+      "description": "Chequea si la fruta está madura. Verificación mecánica contra spec, sin editar código."
+    },
+    {
+      "name": "harvest-inspector",
+      "phase": "harvest",
+      "role": "subagent-readonly",
+      "description": "Cosecha humana. Revisa calidad de código y aprueba el cierre. No edita código."
+    }
+  ],
+  "skill": {
+    "name": "orange-grove",
+    "source": "core/skill/SKILL.md"
+  },
+  "shared": {
+    "templates": {
+      "source": "core/templates",
+      "target": "templates"
+    },
+    "validator": {
+      "source": "core/validator",
+      "target": "validator"
+    },
+    "docs": [
+      { "source": "core/docs/AGENTS.md.tpl", "target": "AGENTS.md" },
+      { "source": "core/docs/CHECKPOINTS.md", "target": "CHECKPOINTS.md" },
+      { "source": "core/docs/orange-grove.md", "target": "docs/orange-grove.md" }
+    ],
+    "state": [
+      { "source": "core/state/feature_list.json", "target": "feature_list.json", "overwrite": "never" },
+      { "source": "core/state/state.yaml", "target": "progress/state.yaml", "overwrite": "never" },
+      { "source": "core/state/current.md", "target": "progress/current.md", "overwrite": "never" },
+      { "source": "core/state/history.md", "target": "progress/history.md", "overwrite": "never" }
+    ],
+    "directories": [
+      "specs/active",
+      "specs/archive"
+    ]
+  }
+}

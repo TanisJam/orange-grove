@@ -1,0 +1,18 @@
+{
+  "tool": "cursor",
+  "displayName": "Cursor",
+  "agentDir": ".cursor/rules",
+  "agentExtension": ".mdc",
+  "skillDir": ".cursor/rules/orange-grove",
+  "agents": {
+    "orange-grove": { "alwaysApply": false, "globs": [] },
+    "soil-reader": { "alwaysApply": false, "globs": [] },
+    "root-gardener": { "alwaysApply": false, "globs": ["specs/active/**/requirements.md"] },
+    "trunk-shaper": { "alwaysApply": false, "globs": ["specs/active/**/design.md"] },
+    "branch-pruner": { "alwaysApply": false, "globs": ["specs/active/**/tasks.md"] },
+    "fruit-grower": { "alwaysApply": false, "globs": [] },
+    "ripeness-checker": { "alwaysApply": false, "globs": [] },
+    "harvest-inspector": { "alwaysApply": false, "globs": [] }
+  },
+  "notes": "Cursor uses .mdc rule files rather than agent files. The installer renders each Orange SDD agent as a rule. Cursor does not enforce edit:deny — read-only boundaries rely on the agent prompt body."
+}
